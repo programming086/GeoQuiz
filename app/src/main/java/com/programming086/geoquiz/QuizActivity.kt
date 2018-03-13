@@ -32,6 +32,16 @@ class QuizActivity : AppCompatActivity() {
             checkAnswer(false)
         }
 
+        prevButton.setOnClickListener {
+
+            if (currentIndex == 0) {
+                currentIndex = questionBank.size
+            }
+
+            currentIndex = currentIndex - 1
+            updateQuestion()
+        }
+
         nextButton.setOnClickListener {
             currentIndex = (currentIndex + 1) % questionBank.size
             updateQuestion()
